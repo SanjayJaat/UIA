@@ -14,6 +14,7 @@ export default function Text({
   h5,
   h6,
   mt,
+  fw,
   ...rest
 }) {
   return (
@@ -23,6 +24,7 @@ export default function Text({
         StyleSheet.flatten([styles.text, style]),
         color && StyleSheet.flatten([styles.color(color), style]),
         mt && StyleSheet.flatten([styles.mt(mt), style]),
+        fw && StyleSheet.flatten([styles.fw(fw), style]),
 
         h5 && StyleSheet.flatten([styles.h5, style]),
         h1 && StyleSheet.flatten([styles.h1, style]),
@@ -65,4 +67,7 @@ const styles = StyleSheet.create({
   h6: {
     fontSize: sizes.h6,
   },
+  fw: fw => ({
+    fontWeight: fw,
+  }),
 });

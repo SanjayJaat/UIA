@@ -1,33 +1,40 @@
 import {TouchableOpacity, StyleSheet} from 'react-native';
-import React from 'react';
 import Text from './Text';
+import React from 'react';
 import {WIDTH} from '../Utils/Const';
-import {white} from '../Utils/Color';
+import {black, green, white} from '../Utils/Color';
 
-export default function Button({style, textstyle, lable, onPress, ...rest}) {
+export default function Button({
+  style,
+  textStyle,
+  lable,
+  color = white,
+  onPress,
+  ...rest
+}) {
   return (
     <TouchableOpacity {...rest} onPress={onPress} style={[styles.touch, style]}>
-      <Text lable={lable} color={white } style={[styles.texts, textstyle]}>
-        Login
+      <Text h1 color={color + 90} fw={'600'} style={[styles.texts, textStyle]}>
+        {lable}
       </Text>
     </TouchableOpacity>
   );
 }
+
 const styles = StyleSheet.create({
   touch: {
-    borderWidth: 0.5,
-    height: 50,
+    //borderWidth: 0.5,
     width: WIDTH / 1.2,
-    backgroundColor: '#ba5555',
+    height: 50,
+    backgroundColor: green,
     borderStyle: 'solid',
     marginTop: 50,
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-
   texts: {
     textAlign: 'center',
-    fontSize: 35,
-    color: 'white',
-    fontWeight: 'bold',
-    fontFamily: 'serif',
+    // fontFamily: 'serif',
   },
 });

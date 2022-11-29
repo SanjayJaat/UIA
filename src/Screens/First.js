@@ -1,49 +1,59 @@
-import {View, Text, TextInput, TouchableOpacity} from 'react-native';
+import {StyleSheet, TextInput} from 'react-native';
 import React from 'react';
+import BaseView from '../Component/BaseView';
+import Input from '../Component/Input';
+import Text from '../Component/Text';
+import Button from '../Component/Button';
+import {WIDTH} from '../Utils/Const';
+import {useState} from 'react';
 
 export default function First() {
+  const [number, setNumber] = useState('');
+  const submit = () => {
+    if (number.trim() == '' || number == null) {
+      alert('please enter number');
+    }
+  };
+
   return (
-    <View style={{flex: 1}}>
-      <Text
-        style={{
-          fontSize: 30,
-          textAlign: 'center',
-          marginTop: 100,
-          color: 'red',
-        }}>
+    <BaseView style={styles.view}>
+      <Text h1 fw={'900'} style={styles.text}>
         Ica
       </Text>
-      <TextInput
-        style={{
-          width: 200,
-          alignSelf: 'center',
-          borderWidth: 1,
-          borderColor: 'black',
-          height: 40,
-          padding: 7,
-          marginTop: 50,
-          fontSize: 18,
-        }}
-        placeholder="Enter your Number"
-        keyboardType="numeric">
+      {/* <Input style={styles.input} placeholder="Enter your Number">
         +91
-      </TextInput>
-
-      <TouchableOpacity
+      </Input> */}
+      <TextInput
+        onChangeText={text => setNumber(text)}
+        placeholder="enter your number"
+        keyboardType="numeric"
+        maxLength={10}
         style={{
-          width: 200,
-          height: 50,
-          alignSelf: 'center',
-          marginTop: 50,
-          borderWidth: 1,
-          borderColor: 'black',
+          backgroundColor: 'white',
+          width: WIDTH / 1.2,
           borderRadius: 30,
-          backgroundColor: 'blue',
-        }}>
-        <Text style={{fontSize: 29, textAlign: 'center', color: 'white'}}>
-          Submit
-        </Text>
-      </TouchableOpacity>
-    </View>
+          fontSize: 20,
+          paddingLeft: 15,
+        }}></TextInput>
+      <Button lable={'Submit'} onPress={submit} style={styles.button} />
+    </BaseView>
   );
 }
+const styles = StyleSheet.create({
+  input: {
+    alignItems: 'center',
+  },
+  view: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  button: {
+    marginBottom: 60,
+    borderRadius: 50,
+    color: 'white',
+    fontWeight: '300',
+  },
+  text: {
+    marginBottom: 80,
+  },
+});
