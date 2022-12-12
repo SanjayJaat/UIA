@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">195066339787-abpbhe4ld8429ca2b8ij28e57k5gh5d7.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://ui-tech-default-rtdb.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">195066339787</string>
+    <string name="google_api_key" translatable="false">AIzaSyCXhPEPkBN46u-xmVohowXYnBVPG5g3Etw</string>
+    <string name="google_app_id" translatable="false">1:195066339787:android:51630ffc433630ec5a564e</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCXhPEPkBN46u-xmVohowXYnBVPG5g3Etw</string>
+    <string name="google_storage_bucket" translatable="false">ui-tech.appspot.com</string>
+    <string name="project_id" translatable="false">ui-tech</string>
+</resources>

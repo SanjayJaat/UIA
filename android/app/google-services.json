@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "195066339787",
+    "firebase_url": "https://ui-tech-default-rtdb.firebaseio.com",
+    "project_id": "ui-tech",
+    "storage_bucket": "ui-tech.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:195066339787:android:51630ffc433630ec5a564e",
+        "android_client_info": {
+          "package_name": "com.ui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "195066339787-abpbhe4ld8429ca2b8ij28e57k5gh5d7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXhPEPkBN46u-xmVohowXYnBVPG5g3Etw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "195066339787-abpbhe4ld8429ca2b8ij28e57k5gh5d7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

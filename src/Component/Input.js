@@ -15,13 +15,6 @@ export default function Input({
 }) {
   const [passwordVisible, setPasswordVisible] = useState(false);
   let keyboardType = 'default';
-  // if (placeholder === 'Password') {
-  //   keyboardType = 'numeric';
-  // }
-
-  // if (placeholder === 'Username') {
-  //   keyboardType = 'email-adderes';
-  // }
 
   return (
     <View style={[styles.container, style]}>
@@ -32,7 +25,13 @@ export default function Input({
         placeholder={placeholder}
         secureTextEntry={!passwordVisible}
         keyboardType={keyboardType}
-        style={[styles.input, style]}
+        style={[
+          styles.input,
+          {
+            width: placeholder == 'password' ? '88%' : '100%',
+          },
+          style,
+        ]}
       />
       {placeholder === 'Password' ? (
         <Icon
