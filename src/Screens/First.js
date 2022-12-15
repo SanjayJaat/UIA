@@ -7,15 +7,29 @@ import Button from '../Component/Button';
 import {WIDTH} from '../Utils/Const';
 import {useState} from 'react';
 import OtpInputs from 'react-native-otp-inputs';
+import auth from '@react-native-firebase/auth';
 
 export default function First() {
-  const [number, setNumber] = useState('');
-  const submit = () => {
+  const [number, setNumber] = useState();
+  const [confirm, setConfirm] = useState(null);
+  const submit = async () => {
     if (number.trim() == '' || number == null) {
       alert('please enter number');
+    } else {
+      const confirmation = await auth().signInWithPhoneNumber('+91' + number);
+      setConfirm(confirmation);
     }
   };
-
+  async function confirmCode(code) {
+    if (code.length == 6) {
+      try {
+        let res = await confirm.confirm(code);
+        // console.log(res, '====');
+      } catch (error) {
+        console.log('Invalid code.');
+      }
+    }
+  }
   return (
     <BaseView style={styles.view}>
       <Text h1 fw={'900'} style={styles.text}>
@@ -25,6 +39,7 @@ export default function First() {
         style={styles.input}
         placeholder="Enter your Number"
         value={number}
+        keyboardType={'numeric'}
         setValue={setNumber}
         secureTextEntry={false}></Input>
       <OtpInputs
@@ -49,8 +64,8 @@ export default function First() {
           borderColor: 'black',
           borderRadius: 10,
         }}
-        handleChange={code => console.log(code)}
-        numberOfInputs={4}
+        handleChange={code => confirmCode(code)}
+        numberOfInputs={6}
         autofillFromClipboard={true}
       />
       <Text style={styles.text1}>Resand OTP </Text>

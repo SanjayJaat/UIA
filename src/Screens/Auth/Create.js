@@ -6,6 +6,7 @@ import {white} from '../../Utils/Color';
 import Input from '../../Component/Input';
 import Button from '../../Component/Button';
 import Loader from '../../Component/Loader';
+import CreatUser from '../../Network/Auth';
 
 const Create = () => {
   const [name, setname] = useState('');
@@ -25,7 +26,7 @@ const Create = () => {
       alert('enter your data');
     } else {
       setLoading(true);
-      CreateUser(email, password)
+      CreatUser(email, password)
         .then(res => {
           console.log(res, 'usercreate');
           alert(res);
@@ -35,11 +36,12 @@ const Create = () => {
           console.log(error, 'createusererror');
           setLoading(false);
         });
+      // navigation.replace('Login', {name});
 
       // setLoading(true);
       // setTimeout(() => {
       //   setLoading(false);
-      //   // navigation.replace('Login');
+      //   //
       // }, 3000);
     }
   };

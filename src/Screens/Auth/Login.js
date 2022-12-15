@@ -59,7 +59,7 @@ const Login = ({navigation}) => {
         onPress={() => navigation.navigate('First')}
       />
 
-      <TouchableOpacity onPress={() => navigation.navigate('Forget')}>
+      <TouchableOpacity onPress={() => navigation.navigate('Book')}>
         <Text style={styles.text1}>
           Forgot:
           <Text style={{textDecorationLine: 'underline', color: red + 99}}>
